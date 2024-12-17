@@ -9,7 +9,7 @@
       </p>
     </div>
     <div v-else>
-      <Singup></Singup>
+      <Signup></Signup>
       <p>Already have account? 
         <span @click="showLoginForm=!showLoginForm">Login Account?</span>
       </p>
@@ -22,10 +22,10 @@
 <script>
 import { ref } from 'vue';
 import Login from '../components/Login'
-import Singup from '../components/Singup'
+import Signup from '../components/Signup'
 export default {
   components: {
-    Login, Singup 
+    Login, Signup 
   },
   setup(){
     let showLoginForm = ref(true)

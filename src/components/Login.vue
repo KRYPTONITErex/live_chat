@@ -14,6 +14,8 @@
   
   <script>
   import { ref } from 'vue';
+  // import { auth } from '../firebase/config';
+  import { auth } from '../firebase/config';
   
   export default {
   
@@ -23,7 +25,8 @@
           let password = ref("")
   
           let login = ()=>{
-              console.log( email.value, password.value)
+
+              // console.log( email.value, password.value)
             
           }
   
