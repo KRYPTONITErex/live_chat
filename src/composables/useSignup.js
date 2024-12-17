@@ -20,16 +20,13 @@ let createAccount = async (email,password,displayName)=>{
       }catch(err){
         // console.log(err.message);
         error.value = err.message;
-        console.log(error.value);
+        // console.log(error.value);
     }
 
 }
 
 
 let useSignup = ()=>{
-
-
-
 
 
     return {error, createAccount};
