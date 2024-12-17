@@ -23,7 +23,8 @@
           let password = ref("")
   
           let login = ()=>{
-              console.log( email.value, password.value)
+            //   console.log( email.value, password.value)
+            
           }
   
           return { email,password, login };
