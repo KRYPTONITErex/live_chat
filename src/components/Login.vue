@@ -1,42 +1,49 @@
 <template>
 
-    <h2>Login form</h2>
+  <h2>Login form</h2>
   
-    <form @submit.prevent="login">
+  <form @submit.prevent="login">
   
-      <input type="text" placeholder="email" v-model="email">
-      <input type="text" placeholder="password" v-model="password">
-      <button>Login</button>
+    <input type="text" placeholder="email" v-model="email">
+    <input type="text" placeholder="password" v-model="password">
+
+    <div class="error" v-if="error">{{ error }}</div>
+
+    <button>Login</button>
   
-    </form>
+  </form>
   
-  </template>
+</template>
   
-  <script>
+<script>
   import { ref } from 'vue';
-  // import { auth } from '../firebase/config';
   import { auth } from '../firebase/config';
+  import useLogin from '../composables/useLogin';
   
   export default {
   
-      setup(){
+    setup(){
   
-          let email = ref("")
-          let password = ref("")
-  
-          let login = ()=>{
+      let email = ref("");
+      let password = ref("");
 
-              // console.log( email.value, password.value)
-            
-          }
-  
-          return { email,password, login };
-  
+      let {error, signIn} = useLogin();
+
+      let login = async ()=>{
+        let res = await signIn(email.value,password.value)
+
+        if(res){
+          console.log(res.user);
+        }
+
       }
   
+      return { email,password, login , error};
+    }
+
   }
-  </script>
+</script>
   
-  <style>
+<style>
   
-  </style>
+</style>
