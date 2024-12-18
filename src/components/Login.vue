@@ -5,7 +5,7 @@
   <form @submit.prevent="login">
   
     <input type="text" placeholder="email" v-model="email">
-    <input type="text" placeholder="password" v-model="password">
+    <input type="password" placeholder="password" v-model="password">
 
     <div class="error" v-if="error">{{ error }}</div>
 
@@ -22,7 +22,7 @@
   
   export default {
   
-    setup(){
+    setup(props,context){
   
       let email = ref("");
       let password = ref("");
@@ -33,7 +33,9 @@
         let res = await signIn(email.value,password.value)
 
         if(res){
-          console.log(res.user);
+          // console.log(res.user);
+          context.emit("enterChatroom");
+
         }
 
       }

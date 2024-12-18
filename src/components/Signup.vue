@@ -23,7 +23,7 @@ import useSignup from '../composables/useSignup';
 
 export default {
 
-  setup(){
+  setup(pros,context){
 
     let displayName = ref("")
     let email = ref("")
@@ -37,7 +37,9 @@ export default {
       let res = await createAccount(email.value,password.value,displayName.value)
 
       if(res){
-        console.log(res.user)
+        // console.log(res.user)
+        context.emit("enterChatroom");
+
       }
 
     }
