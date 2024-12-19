@@ -4,11 +4,11 @@ import { auth } from "../firebase/config";
 
 let error = ref(null);
 
-let createLogout = async ()=>{
+let Logout = async ()=>{
     try{
         // console.log("logout")
        await auth.signOut();
-       console.log("user Logged out");
+       console.log("USER LOG OUTED OUT");
    }catch(err){
        error.value = err.message;
        console.log(error.value);
@@ -18,7 +18,7 @@ let createLogout = async ()=>{
 
 let useLogOut = ()=>{
 
-    return {error, createLogout};
+    return {error, Logout};
 }
 
 export default useLogOut;

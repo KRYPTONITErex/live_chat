@@ -24,8 +24,8 @@
   
     setup(props,context){
   
-      let email = ref("");
-      let password = ref("");
+      let email = ref('');
+      let password = ref('');
 
       let {error, signIn} = useLogin();
 
