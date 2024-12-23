@@ -1,6 +1,6 @@
 <template>
 
-  <h2>Login form</h2>
+  <h2>Login to CHAT ROOM !!</h2>
   
   <form @submit.prevent="login">
   
