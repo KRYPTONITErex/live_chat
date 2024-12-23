@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
 .parent-container {
     overflow: visible;
 }
